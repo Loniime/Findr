@@ -1,0 +1,417 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- 
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group svg {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }
+</style>
+-->
+
+<main class="main">
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <img id="logo" src="assets/img/portfolio/fullsize/logo3.png"/>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#Annonces">Annonces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Bureaux">Bureaux des objets trouvés</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Aide">Aide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold header-text">Plus jamais perdre vos objets avec 
+                        Findr</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Facilitez la récupération de vos objets perdus en déclarant rapidement leur perte grâce à notre application!</p>
+                    <a class="btn btn-xl" href="Declaration">C'est Partie!</a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Declaration -->
+    <section class="page-section " id="Declaration">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0 header-text">Déclarer vos objets perdus ou trouvé dès maintenant</h2>
+                    <hr class="divider divider-light" />
+                    <div class="col-lg-6 float-lg-start">
+                        <div class="button1-description">
+                            <h4>Vous avez perdu un objet?</h4>
+                            <p>Rejoignez notre communauté dynamique et partagez l'aventure de retrouver vos objets perdus !</p>
+                        </div>
+                        <a class="btn1 btn-xl" href="#Formulaire">Je déclare mon objet perdu</a>
+                    </div>
+    
+                    <!-- Espace entre les colonnes -->
+                    <div class="col-lg-12 mt-5"></div>
+    
+                    <!-- Colonne de droite -->
+                    <div class="col-lg-6 float-lg-end">
+                        <div class="button2-description">
+                            <h4>Vous avez trouvé un objet?</h4>
+                            <p>Soyez un héros du quotidien en aidant quelqu'un à retrouver son objet perdu grâce à notre plateforme conviviale !</p>
+                        </div>
+                        <a class="btn2 btn-xl" href="#Formulaire">Je déclare l’objet que j’ai trouvé</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Formulaire-->
+    <section class="page-section" id="Formulaire">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center text-white mt-0 header-text">Formulaire de déclaration <br> d'objet perdu ou trouvé</h2>
+            <hr class="divider" />
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                    <h3 class="text-white header-text">Etat de l’objet :</h3>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <button class="btn1 btn-lg btn-long ">Perdu</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn2 btn-lg btn-long">Trouvé</button>
+                        </div>
+                    </div>
+                    <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
+                    <h3 class="text-white header-text">Quoi?</h3>
+                    <select class="form-select mt-2 select-background" aria-label="Quoi?">
+                        <option selected>Catégorie de l’objet</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+                <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+                <form>
+                    <div class="mb-3">
+                        <h4 for="photoInput" class="text-white header-text">Importer une photo </h4>
+                        <input type="file" class="form-control select-background" id="photoInput" accept="image/*">
+                        <p>(Les photos sont publiques et visibles des autres utilisateurs, ne publiez pas des photos de vos papiers d'identité ou d'informations trop personnelles.)</p>
+                    </div>
+                </form>  
+                <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div> 
+                <form>
+                    <div class="mb-3">
+                      <textarea class="form-control select-background" id="exampleFormControlTextarea1" rows="5" placeholder="Décrivez mieux votre objet"></textarea>
+                    </div>
+                </form>   
+                <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+                <h3 class="text-white header-text">Où?</h3>
+                <div class="mb-3">
+                    <select class="form-select mt-2 select-background" id="ville">
+                        <option value="" disabled selected>Ville ou code postal</option>
+                      <option value="ville1">Ville 1</option>
+                      <option value="ville2">Ville 2</option>
+                      <option value="ville3">Ville 3</option>
+                      <!-- Ajoutez d'autres options ici -->
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" class="form-control mt-2 select-background" id="adresse" placeholder="Adresse,Rue">
+                </div>
+                <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+                <h3 class="text-white header-text">Quand?</h3>
+                <div class="mb-3 ">
+                    <a class="btn3 btn-lg btn-long1 me-2">Aujourd'hui</a>
+                    <a class="btn3 btn-lg btn-long1 me-2">Hier</a>
+                    <input type="date" class="btn3 btn-lg btn-long1 ">
+                </div>
+                <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl">Terminer</a>
+                </div> 
+        </div>
+    </section>
+    <!-- Comment ça marche-->
+    <section class="page-section " id="Aide">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center text-white mt-0 header-text">Comment ça marche?</h2>
+            <hr class="divider" />
+            <div class="row ">
+                <div class="col-lg-4 mb-4 text-center">
+                    <img src="assets/img/1.png" class="icon">
+                    <div class="border p-3">
+                        <h5>Je déclare mon objet perdus</h5>
+                        <p>En déclarant votre objet, vous augmentez vos chances de vous faire contacter par celui qui a trouvé votre objet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="assets/img/2.png" class="icon">
+                    <div class="border p-3">
+                        <h5>Je déclare mon objet perdus</h5>
+                        <p>En déclarant votre objet, vous augmentez vos chances de vous faire contacter par celui qui a trouvé votre objet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="assets/img/3.png" class="icon">
+                    <div class="border p-3">
+                        <h5>Je déclare mon objet perdus</h5>
+                        <p>En déclarant votre objet, vous augmentez vos chances de vous faire contacter par celui qui a trouvé votre objet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bureaux-->
+    <section class="page-section" id="Bureaux">
+        <div class="container px-4 px-lg-5">
+                <div class="col-lg-12">
+                    <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
+                    <hr class="divider" />
+                    <div class="row text-center">
+                        <!-- Première rangée -->
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Le Mans</button>
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Paris</button>
+                        </div>
+                        <!-- Deuxième rangée -->
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Marseille</button>
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Tours</button>
+                        </div>
+                        <!-- Troisième rangée -->
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Lille</button>
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Nice</button>
+                        </div>
+                        <!-- Quatrième rangée -->
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Nantes</button>
+                        </div>
+                        <div class="col-lg-3 mb-4">
+                            <button class="btn btn-lg btn-long2">Rennes</button>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <select class="form-select mt-2 select-background1 flex-grow-1" id="ville">
+                            <option value="" disabled selected>Ville ou code postal</option>
+                            <option value="ville1">Ville 1</option>
+                            <option value="ville2">Ville 2</option>
+                            <option value="ville3">Ville 3</option>
+                            <!-- Ajoutez d'autres options ici -->
+                        </select>
+                        <button class="btn btn-xl ms-2">Chercher</button>
+                    </div>    
+            </div>
+    </div>
+    </section>
+            
+    <section class="page-section" id="Annonces">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0 header-text">Annonces</h2>
+                    <hr class="divider divider-light" />
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="page-section" id="Contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 ">
+                    <h2 class="text-white mt-0 header-text">Contact</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</main>
+<router-outlet>

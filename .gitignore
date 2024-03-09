@@ -1,0 +1,17 @@
+# Ignore les fichiers générés par npm
+node_modules/
+dist/
+.DS_Store
+.idea/
+.angular/
+.vscode/
+Findr
+.editorconfig
+angular.json
+package-lock.json
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+
