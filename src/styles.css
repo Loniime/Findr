@@ -3175,8 +3175,8 @@ textarea.form-control-lg {
 .btn-long2 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  width: 200px;
+  height: 150px;
 }
 .btn-sm, .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
@@ -10872,10 +10872,56 @@ body {
 }
 
 .page-section {
-  padding: 8rem 0;
+  padding-top: 3rem;
+  padding-bottom: 22rem;
   background-color: #cec2b8;
 }
+.page{
+  padding-top: 8rem;
+  padding-bottom: 12rem;
+  background-color: #623e2a;
+}
+.cadre {
+  border: 1px solid #ccc;
+  padding-top: 10px;
+  padding: 1px;
+  width: 400px;
 
+}
+.annonce-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  height: 500px;
+}
+
+.cadre1 {
+  width: 300px;
+  flex-shrink: 0; 
+  margin-right: 10px; 
+  scroll-snap-align: start;
+}
+.lien-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.lien-details:hover {
+  color: #FF5733; 
+}
+
+.icon-small {
+  width: 100px; 
+  height: 100px; 
+}
+.icon-small1 {
+  width: 150px; 
+  height: 150px; 
+}
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
