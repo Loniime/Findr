@@ -6,7 +6,7 @@ import { AideComponent } from './components/aide/aide.component';
 import { BureauxComponent } from './components/bureaux/bureaux.component';
 import { AnnoncesComponent } from './components/annonces/annonces.component';
 import { ContactComponent } from './components/contact/contact.component';
-
+import { MasterheadComponent } from './components/masterhead/masterhead.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -17,7 +17,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AideComponent,
     BureauxComponent,
     AnnoncesComponent,
-    ContactComponent
+    ContactComponent,
+    MasterheadComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
