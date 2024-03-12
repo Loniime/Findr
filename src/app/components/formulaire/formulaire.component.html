@@ -1,0 +1,65 @@
+<section class="page-section" id="Formulaire">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center text-white mt-0 header-text">Formulaire de déclaration <br> d'objet perdu ou trouvé</h2>
+        <hr class="divider" />
+            <div class="mt-5">
+                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                <h3 class="text-white header-text">Etat de l’objet :</h3>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <button class="btn1 btn-lg btn-long ">Perdu</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn2 btn-lg btn-long">Trouvé</button>
+                    </div>
+                </div>
+                <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
+                <h3 class="text-white header-text">Quoi?</h3>
+                <select class="form-select mt-2 select-background" aria-label="Quoi?">
+                    <option selected>Catégorie de l’objet</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+            <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+            <form>
+                <div class="mb-3">
+                    <h4 for="photoInput" class="text-white header-text">Importer une photo </h4>
+                    <input type="file" class="form-control select-background" id="photoInput" accept="image/*">
+                    <p>(Les photos sont publiques et visibles des autres utilisateurs, ne publiez pas des photos de vos papiers d'identité ou d'informations trop personnelles.)</p>
+                </div>
+            </form>  
+            <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div> 
+            <form>
+                <div class="mb-3">
+                  <textarea class="form-control select-background" id="exampleFormControlTextarea1" rows="5" placeholder="Décrivez mieux votre objet"></textarea>
+                </div>
+            </form>   
+            <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+            <h3 class="text-white header-text">Où?</h3>
+            <div class="mb-3">
+                <select class="form-select mt-2 select-background" id="ville">
+                    <option value="" disabled selected>Ville ou code postal</option>
+                  <option value="ville1">Ville 1</option>
+                  <option value="ville2">Ville 2</option>
+                  <option value="ville3">Ville 3</option>
+                  <!-- Ajoutez d'autres options ici -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control mt-2 select-background" id="adresse" placeholder="Adresse,Rue">
+            </div>
+            <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+            <h3 class="text-white header-text">Quand?</h3>
+            <div class="mb-3 ">
+                <a class="btn3 btn-lg btn-long1 me-2">Aujourd'hui</a>
+                <a class="btn3 btn-lg btn-long1 me-2">Hier</a>
+                <input type="date" class="btn3 btn-lg btn-long1 ">
+            </div>
+            <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
+            <div class="text-center mt-4">
+                <a class="btn btn-xl">Terminer</a>
+            </div> 
+    </div>
+</section>
