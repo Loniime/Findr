@@ -3,34 +3,14 @@
             <div class="col-lg-12">
                 <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
                 <hr class="divider" />
-                <div class="row text-center">
+                <div class="row text-center" *ngIf="bureaux$ | async as bureaux">
                     <!-- Première rangée -->
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Le Mans</button>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Paris</button>
+                    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
+                        <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
                     </div>
                     <!-- Deuxième rangée -->
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Marseille</button>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Tours</button>
-                    </div>
-                    <!-- Troisième rangée -->
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Lille</button>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Nice</button>
-                    </div>
-                    <!-- Quatrième rangée -->
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Nantes</button>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <button class="btn btn-lg btn-long2">Rennes</button>
+                    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
+                        <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
                     </div>
                 </div>
                 <div class="mb-3 d-flex">
@@ -46,3 +26,10 @@
         </div>
 </div>
 </section>
+<!--
+<div class="row text-center" *ngIf="bureaux$ | async as bureaux">
+    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
+      <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
+    </div>
+  </div>
+  -->
