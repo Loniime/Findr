@@ -18,7 +18,7 @@ export class BureauxComponent {
     this.bureaux$ = getAllBureaux().pipe(
       map((result: BureauResult) => {
         return {
-          results: result.results.slice(0, 6) 
+          results: result.results.slice(0, 8) 
         };
       })
     );

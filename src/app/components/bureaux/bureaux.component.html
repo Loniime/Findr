@@ -4,25 +4,12 @@
                 <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
                 <hr class="divider" />
                 <div class="row text-center" *ngIf="bureaux$ | async as bureaux">
-                    <!-- Première rangée -->
+                    
                     <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
                         <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
                     </div>
-                    <!-- Deuxième rangée -->
-                    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
-                        <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
-                    </div>
+                    
                 </div>
-                <div class="mb-3 d-flex">
-                    <select class="form-select mt-2 select-background1 flex-grow-1" id="ville">
-                        <option value="" disabled selected>Ville ou code postal</option>
-                        <option value="ville1">Ville 1</option>
-                        <option value="ville2">Ville 2</option>
-                        <option value="ville3">Ville 3</option>
-                        <!-- Ajoutez d'autres options ici -->
-                    </select>
-                    <button class="btn btn-xl ms-2">Chercher</button>
-                </div>    
         </div>
 </div>
 </section>
