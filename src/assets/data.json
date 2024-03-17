@@ -1855,6 +1855,24 @@
       "gc_obo_nature_c": "Livre de poche",
       "gc_obo_type_c": "Livres, articles de papéterie",
       "gc_obo_nom_recordtype_sc_c": "Perdu"
+    },
+    {
+      "id": "edc3",
+      "date": "2024-03-06",
+      "description": "Clés maison avec un porte-clé de Real Madrid",
+      "ville": "Tours",
+      "gc_obo_nature_c": "Clés, porte-clés",
+      "gc_obo_type_c": "Clés, porte-clés, badge magnétique",
+      "gc_obo_nom_recordtype_sc_c": "Perdu"
+    },
+    {
+      "id": "119a",
+      "date": "2024-03-09",
+      "description": "Boucles d'oreilles en forme d'une étoile dorée",
+      "ville": "La Rochelle",
+      "gc_obo_nature_c": "Boucles d'oreilles",
+      "gc_obo_type_c": "Bijoux, montres",
+      "gc_obo_nom_recordtype_sc_c": "Perdu"
     }
   ]
 }
