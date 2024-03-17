@@ -7,6 +7,9 @@ import { BureauxComponent } from './components/bureaux/bureaux.component';
 import { AnnoncesComponent } from './components/annonces/annonces.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { MasterheadComponent } from './components/masterhead/masterhead.component';
+
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,11 +21,13 @@ import { MasterheadComponent } from './components/masterhead/masterhead.componen
     BureauxComponent,
     AnnoncesComponent,
     ContactComponent,
-    MasterheadComponent
+    MasterheadComponent,
+    CommonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'dashprojet';
+  
 }
