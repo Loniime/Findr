@@ -1,17 +1,29 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import * as data from '../../../assets/data.json';
 import { CommonModule } from '@angular/common';
-
+import { AnnoncesComponent } from '../annonces/annonces.component';
+interface DataItem {
+  date: string;
+  gc_obo_gare_origine_r_name: string;
+  ville: string;
+  gc_obo_gare_origine_r_code_uic_c: string;
+  gc_obo_nature_c: string;
+  gc_obo_type_c: string;
+  gc_obo_nom_recordtype_sc_c: string;
+}
 
 @Component({
   selector: 'app-formulaire',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AnnoncesComponent],
   templateUrl: './formulaire.component.html',
   styleUrl: './formulaire.component.css'
 })
 export class FormulaireComponent {
-  jsonData = data.results;
+  
+  jsonData: DataItem[] = (data as any).results;
+  annoncesTrouvees: DataItem[] = [];
+
   etatSelectionne: string = '';
   categorieSelectionnee: string = '';
   lieuSelectionne: string = '';
@@ -24,7 +36,41 @@ export class FormulaireComponent {
   descriptionVisible: boolean = false;
   dateVisible: boolean = false;
 
+  constructor() { }
+
+  comparerDonnees() {
+    this.annoncesTrouvees = [];
+    let correspondanceTrouvee = false; // Variable pour suivre si une correspondance a été trouvée
   
+    // Parcourir les données JSON
+    this.jsonData.forEach((obj: DataItem) => {
+      // Comparer chaque variable avec la variable sélectionnée dans le formulaire
+      if (obj.gc_obo_type_c === this.categorieSelectionnee &&
+          obj.ville === this.lieuSelectionne &&
+          obj.date === this.dateSelectionnee) {
+        // Une correspondance est trouvée
+        correspondanceTrouvee = true;
+      }
+    });
+  
+    // Si aucune correspondance n'a été trouvée, ajouter les valeurs sélectionnées
+    if (!correspondanceTrouvee) {
+      // Créer un nouvel objet temporaire avec les valeurs sélectionnées
+      const nouvelleAnnonce: DataItem = {
+        date: this.dateSelectionnee,
+        gc_obo_gare_origine_r_name: '', // Vous pouvez assigner des valeurs vides à ces propriétés
+        ville: this.lieuSelectionne,
+        gc_obo_gare_origine_r_code_uic_c: '',
+        gc_obo_nature_c: '',
+        gc_obo_type_c: this.categorieSelectionnee,
+        gc_obo_nom_recordtype_sc_c: this.etatSelectionne
+      };
+      // Poussez le nouvel objet dans annoncesTrouvees
+      this.annoncesTrouvees.push(nouvelleAnnonce);
+    }
+  }
+  
+
 
   onComplete() {
     this.etatVisible = true;
@@ -37,7 +83,7 @@ export class FormulaireComponent {
   getUniqueTypes(): string[] {
     const uniqueNames = new Set<string>();
 
-    this.jsonData.forEach(item => {
+    this.jsonData.forEach((item: DataItem) => {
       if (item.gc_obo_type_c !== null && item.gc_obo_type_c !== undefined) {
         uniqueNames.add(item.gc_obo_type_c);
       }
@@ -49,7 +95,7 @@ export class FormulaireComponent {
   getUniqueNames(): string[] {
     const uniqueNames = new Set<string>();
 
-    this.jsonData.forEach(item => {
+    this.jsonData.forEach((item: DataItem) => {
       if (item.ville !== null && item.ville !== undefined) {
         uniqueNames.add(item.ville);
       }
@@ -86,7 +132,7 @@ export class FormulaireComponent {
     let dateToDisplay: string;
 
     switch (selectedDate) {
-      case 'Aujourd\'hui':
+      case 'today':
         dateToDisplay = this.getDateString(new Date());
         break;
       case 'Hier':
@@ -111,4 +157,5 @@ export class FormulaireComponent {
     return `${year}-${month}-${day}`;
   }
 
+  
 }

@@ -48,16 +48,16 @@
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Quand?</h3>
             <div class="mb-3 ">
-                <a class="btn3 btn-lg btn-long1 me-2" (click)="onDateChange('Aujourd\'hui')">Aujourd'hui</a>
+                <a class="btn3 btn-lg btn-long1 me-2" (click)="onDateChange('today')">Aujourd'hui</a>
                 <a class="btn3 btn-lg btn-long1 me-2" (click)="onDateChange('Hier')">Hier</a>
                 <input  type="date" class="btn3 btn-lg btn-long1" (change)="onDateChange($event)">
 
             </div>
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <div class="text-center mt-4">
-                <a class="btn btn-xl" (click)="onComplete()">Terminer</a>
+                <a class="btn btn-xl" (click)="onComplete()" (click)="comparerDonnees()">Terminer</a>
             </div> 
-
+            <!--
             <div *ngIf="lieuVisible" >
                 <p *ngIf="lieuSelectionne !== ''">Lieu sélectionné : {{ lieuSelectionne }}</p>
             </div>
@@ -75,6 +75,15 @@
             <div *ngIf="dateVisible">
                 <p *ngIf="dateSelectionnee  !== ''">date sélectionnée : {{ dateSelectionnee  }}</p>
             </div>
+        -->
             
     </div>
 </section>
+
+
+<div *ngFor="let annonce of annoncesTrouvees" class="cadre1">
+    <div *ngFor="let prop of annonce | keyvalue">
+        <h3 *ngIf="prop.value">{{ prop.key }}: {{ prop.value }}</h3>
+    </div>
+</div>
+
