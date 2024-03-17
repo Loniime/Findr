@@ -3,13 +3,14 @@
             <div class="col-lg-12">
                 <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
                 <hr class="divider" />
-                <div class="row text-center" *ngIf="bureaux$ | async as bureaux">
+                <div class="row text-center">
                     
-                    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
-                        <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
+                    <div class="col-lg-3 mb-4" *ngFor="let name of getRandomNames()">
+                        <button class="btn btn-lg btn-long2">{{ name }}</button>
                     </div>
                     
                 </div>
+                  
         </div>
 </div>
 </section>
