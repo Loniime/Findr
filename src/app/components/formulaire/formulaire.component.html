@@ -22,6 +22,14 @@
                 </select>
                 
             </div>
+
+            <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
+                <h3 class="text-white header-text" >Nature?</h3>
+                <select class="form-select mt-2 select-background" (change)="onNatureChange($event)">
+                    <option selected *ngFor="let name of getUniqueNature()" [value]="name">{{ name }}</option>
+                </select>
+                
+            
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <form>
                 <div class="mb-3">
@@ -45,6 +53,11 @@
                 </select>
                 
               </div>
+              <div class="mb-3">
+                <h3 class="header-text text-white">Adresse e-mail :</h3>
+                <input type="email" class="form-control select-background" id="emailInput" placeholder="Votre adresse e-mail">
+                <!-- Utilisez ngModel pour lier la valeur de l'input à une propriété dans votre composant TypeScript -->
+            </div>
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Quand?</h3>
             <div class="mb-3 ">
@@ -53,6 +66,7 @@
                 <input  type="date" class="btn3 btn-lg btn-long1" (change)="onDateChange($event)">
 
             </div>
+            
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <div class="text-center mt-4">
                 <a class="btn btn-xl" (click)="onComplete()" (click)="comparerDonnees()">Terminer</a>
@@ -80,10 +94,10 @@
     </div>
 </section>
 
-
+<!--
 <div *ngFor="let annonce of annoncesTrouvees" class="cadre1">
     <div *ngFor="let prop of annonce | keyvalue">
         <h3 *ngIf="prop.value">{{ prop.key }}: {{ prop.value }}</h3>
     </div>
 </div>
-
+-->

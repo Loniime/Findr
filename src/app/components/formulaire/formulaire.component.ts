@@ -2,20 +2,20 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import * as data from '../../../assets/data.json';
 import { CommonModule } from '@angular/common';
 import { AnnoncesComponent } from '../annonces/annonces.component';
+import axios from 'axios';
 interface DataItem {
   date: string;
-  gc_obo_gare_origine_r_name: string;
   ville: string;
-  gc_obo_gare_origine_r_code_uic_c: string;
   gc_obo_nature_c: string;
   gc_obo_type_c: string;
   gc_obo_nom_recordtype_sc_c: string;
+  description: string;
 }
 
 @Component({
   selector: 'app-formulaire',
   standalone: true,
-  imports: [CommonModule,AnnoncesComponent],
+  imports: [CommonModule],
   templateUrl: './formulaire.component.html',
   styleUrl: './formulaire.component.css'
 })
@@ -29,16 +29,18 @@ export class FormulaireComponent {
   lieuSelectionne: string = '';
   descriptionSelectionnee: string = '';
   dateSelectionnee: string = '';
+  natureSelectionnee:string = '';
 
   etatVisible: boolean = false;
   categorieVisible: boolean = false;
   lieuVisible: boolean = false;
   descriptionVisible: boolean = false;
   dateVisible: boolean = false;
+  natureVisible: boolean=false;
 
   constructor() { }
 
-  comparerDonnees() {
+  async comparerDonnees() {
     this.annoncesTrouvees = [];
     let correspondanceTrouvee = false; // Variable pour suivre si une correspondance a été trouvée
   
@@ -58,18 +60,26 @@ export class FormulaireComponent {
       // Créer un nouvel objet temporaire avec les valeurs sélectionnées
       const nouvelleAnnonce: DataItem = {
         date: this.dateSelectionnee,
-        gc_obo_gare_origine_r_name: '', // Vous pouvez assigner des valeurs vides à ces propriétés
+        description:this.descriptionSelectionnee,
         ville: this.lieuSelectionne,
-        gc_obo_gare_origine_r_code_uic_c: '',
-        gc_obo_nature_c: '',
+        gc_obo_nature_c: this.natureSelectionnee,
         gc_obo_type_c: this.categorieSelectionnee,
         gc_obo_nom_recordtype_sc_c: this.etatSelectionne
       };
       // Poussez le nouvel objet dans annoncesTrouvees
       this.annoncesTrouvees.push(nouvelleAnnonce);
+      try {
+        // Utilisez Axios pour envoyer les données à votre serveur
+        const response = await axios.post('http://localhost:3000/results', nouvelleAnnonce);
+        console.log(response.data); // Vous pouvez afficher la réponse du serveur si nécessaire
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi des données:', error);
+      }
+    
     }
-  }
+    
   
+  }
 
 
   onComplete() {
@@ -78,6 +88,7 @@ export class FormulaireComponent {
     this.lieuVisible = true;
     this.descriptionVisible = true;
     this.dateVisible = true;
+    this.natureVisible = true;
   }
 
   getUniqueTypes(): string[] {
@@ -103,6 +114,17 @@ export class FormulaireComponent {
 
     return Array.from(uniqueNames);
   }
+  getUniqueNature(): string[] {
+    const uniqueNames = new Set<string>();
+
+    this.jsonData.forEach((item: DataItem) => {
+      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined) {
+        uniqueNames.add(item.gc_obo_nature_c);
+      }
+    });
+
+    return Array.from(uniqueNames);
+  }
 
   onEtatChange(value: string) {
     this.etatSelectionne = value;
@@ -113,6 +135,11 @@ export class FormulaireComponent {
     const target = event.target as HTMLSelectElement;
     this.categorieSelectionnee = target.value;
     console.log("Catégorie sélectionnée:", this.categorieSelectionnee);
+  }
+  onNatureChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.natureSelectionnee = target.value;
+    console.log("Catégorie sélectionnée:", this.natureSelectionnee);
   }
 
   onLieuChange(event: Event) {
