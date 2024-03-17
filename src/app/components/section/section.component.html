@@ -9,7 +9,7 @@
                         <h4>Vous avez perdu un objet?</h4>
                         <p>Rejoignez notre communauté dynamique et partagez l'aventure de retrouver vos objets perdus ! </p>
                     </div>
-                    <a class="btn1 btn-xl" href="#Formulaire">Je déclare mon objet perdu</a>
+                    <a class="btn1 btn-xl" href="#Formulaire" (click)="onGetStarted()">Je déclare mon objet perdu</a>
                 </div>
 
                 <!-- Espace entre les colonnes -->
@@ -21,9 +21,11 @@
                         <h4>Vous avez trouvé un objet?</h4>
                         <p>Soyez un héros du quotidien en aidant quelqu'un à retrouver son objet perdu !</p>
                     </div>
-                    <a class="btn2 btn-xl" href="#Formulaire">Je déclare l’objet que j’ai trouvé</a>
+                    <a class="btn2 btn-xl" href="#Formulaire" (click)="onGetStarted()">Je déclare l’objet que j’ai trouvé</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<app-formulaire *ngIf="showSection"></app-formulaire>
+
