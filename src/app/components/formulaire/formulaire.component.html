@@ -7,20 +7,20 @@
                 <h3 class="text-white header-text">Etat de l’objet :</h3>
                 <div class="row mt-3">
                     <div class="col-md-6">
-                        <button class="btn1 btn-lg btn-long ">Perdu</button>
+                        <button class="btn1 btn-lg btn-long " (click)="onEtatChange('Perdu')" >Perdu</button>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn2 btn-lg btn-long">Trouvé</button>
+                        <button class="btn2 btn-lg btn-long" (click)="onEtatChange('Trouvé')">Trouvé</button>
                     </div>
                 </div>
+                
+
                 <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
-                <h3 class="text-white header-text">Quoi?</h3>
-                <select class="form-select mt-2 select-background" aria-label="Quoi?">
-                    <option selected>Catégorie de l’objet</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
+                <h3 class="text-white header-text" >Quoi?</h3>
+                <select class="form-select mt-2 select-background" aria-label="Quoi?" (change)="onCategorieChange($event)">
+                    <option selected *ngFor="let name of getUniqueTypes()" [value]="name">{{ name }}</option>
                 </select>
+                
             </div>
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <form>
@@ -33,33 +33,48 @@
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div> 
             <form>
                 <div class="mb-3">
-                  <textarea class="form-control select-background" id="exampleFormControlTextarea1" rows="5" placeholder="Décrivez mieux votre objet"></textarea>
+                  <textarea class="form-control select-background" id="exampleFormControlTextarea1" rows="5" placeholder="Décrivez mieux votre objet" (change)="onDesChange($event)"></textarea>
                 </div>
             </form>   
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Où?</h3>
             <div class="mb-3">
-                <select class="form-select mt-2 select-background" id="ville">
-                    <option value="" disabled selected>Ville ou code postal</option>
-                  <option value="ville1">Ville 1</option>
-                  <option value="ville2">Ville 2</option>
-                  <option value="ville3">Ville 3</option>
-                  <!-- Ajoutez d'autres options ici -->
+                <select class="form-select mt-2 select-background" id="ville" (change)="onLieuChange($event)">
+                    <option *ngFor="let name of getUniqueNames()">{{ name }}</option>
+                  
                 </select>
+                
               </div>
-              <div class="mb-3">
-                <input type="text" class="form-control mt-2 select-background" id="adresse" placeholder="Adresse,Rue">
-            </div>
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Quand?</h3>
             <div class="mb-3 ">
-                <a class="btn3 btn-lg btn-long1 me-2">Aujourd'hui</a>
-                <a class="btn3 btn-lg btn-long1 me-2">Hier</a>
-                <input type="date" class="btn3 btn-lg btn-long1 ">
+                <a class="btn3 btn-lg btn-long1 me-2" (click)="onDateChange('Aujourd\'hui')">Aujourd'hui</a>
+                <a class="btn3 btn-lg btn-long1 me-2" (click)="onDateChange('Hier')">Hier</a>
+                <input  type="date" class="btn3 btn-lg btn-long1" (change)="onDateChange($event)">
+
             </div>
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <div class="text-center mt-4">
-                <a class="btn btn-xl">Terminer</a>
+                <a class="btn btn-xl" (click)="onComplete()">Terminer</a>
             </div> 
+
+            <div *ngIf="lieuVisible" >
+                <p *ngIf="lieuSelectionne !== ''">Lieu sélectionné : {{ lieuSelectionne }}</p>
+            </div>
+            <div *ngIf="etatVisible">
+                <p *ngIf="etatSelectionne !== ''">État sélectionné : {{ etatSelectionne }}</p>
+            </div>
+            <div *ngIf="categorieVisible">
+                <p *ngIf="categorieSelectionnee !== ''">Catégorie sélectionnée : {{ categorieSelectionnee }}</p>
+            </div>
+
+            <div *ngIf="descriptionVisible">
+                <p *ngIf="descriptionSelectionnee !== ''">description sélectionnée : {{ descriptionSelectionnee }}</p>
+            </div>
+
+            <div *ngIf="dateVisible">
+                <p *ngIf="dateSelectionnee  !== ''">date sélectionnée : {{ dateSelectionnee  }}</p>
+            </div>
+            
     </div>
 </section>
