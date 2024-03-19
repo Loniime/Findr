@@ -1891,6 +1891,24 @@
       "gc_obo_nature_c": "Sac à dos",
       "gc_obo_type_c": "Bagagerie: sacs, valises, cartables",
       "gc_obo_nom_recordtype_sc_c": "Perdu"
+    },
+    {
+      "id": "8a5b",
+      "date": "2024-03-18",
+      "description": "Boucles d'oreilles en or",
+      "ville": "Le Mans",
+      "gc_obo_nature_c": "Boucles d'oreilles",
+      "gc_obo_type_c": "Bijoux, montres",
+      "gc_obo_nom_recordtype_sc_c": "Perdu"
+    },
+    {
+      "id": "f5a8",
+      "date": "2024-03-19",
+      "description": "porte-clés avec 3 clés et un badge vert",
+      "ville": "Le Mans",
+      "gc_obo_nature_c": "Clés, porte-clés",
+      "gc_obo_type_c": "Clés, porte-clés, badge magnétique",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé"
     }
   ]
 }
