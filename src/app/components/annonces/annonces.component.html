@@ -1,33 +1,49 @@
-<section class="page-section" id="Annonces">
+<section class="page-section text-center" id="Annonces">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 text-center">
+            <div class="col-lg-8">
                 <h2 class="text-white mt-0 header-text">Annonces</h2>
                 <hr class="divider divider-light" />
 
                 <div class="annonce-container">
-                    <!-- Utilisez *ngFor pour afficher chaque annonce -->
                     <div class="cadre1" *ngFor="let annonce of annonces">
-                        <h3>{{ annonce.gc_obo_nature_c }}</h3>
-                        <p>Lieu: {{ annonce.ville }}</p>
-                        
-                        <!-- Ajoutez le lien vers plus de détails si nécessaire -->
-                        <a href="#Details" class="lien-details" (click)="afficherDetails(annonce)">Voir plus de détails</a>
+                        <div class="annonce-cadre">
+                            <h2 class="header-text text-acconce">{{ annonce.gc_obo_nature_c }}</h2>
+                            <a>Nature: {{annonce.gc_obo_nature_c}}</a><br>
+                            <a>Lieu: {{ annonce.ville }}</a>
+                            <a href="#Details" class="lien-details a-annonce" (click)="afficherDetails(annonce)">Voir plus de détails</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="page-section" id="Details" *ngIf="annonceSelectionnee">
-        <h2>Détails de l'annonce </h2>
-        <h3>{{annonceSelectionnee.gc_obo_nature_c}}</h3>
-        <ng-container *ngIf="annonceSelectionnee.description"> <!-- Utilisez annonceSelectionnee.description au lieu de annonce.description -->
-            <p>Description: {{ annonceSelectionnee.description }}</p>
-        </ng-container>
-        <p>Type: {{ annonceSelectionnee.gc_obo_type_c }}</p>
-        <p>Lieu: {{annonceSelectionnee.ville}}</p>
-        <p>Date: {{ annonceSelectionnee.date }}</p>
-        <p>Etat: {{annonceSelectionnee.gc_obo_nom_recordtype_sc_c}}</p>
-        <!-- Ajoutez d'autres détails si nécessaire -->
-    </section>
+</section>
+
+<section class="page-section text-center" id="Details" *ngIf="annonceSelectionnee">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-white header-text">Information à propos de l'objet</h2>
+                <hr class="divider divider-light" />
+                <h2>{{annonceSelectionnee.gc_obo_nature_c}}</h2>
+                
+                <div class="d-flex justify-content-center">
+                    <div class="etat-cadre text-white">{{annonceSelectionnee.gc_obo_nom_recordtype_sc_c}}</div>
+                </div>
+                <ng-container *ngIf="annonceSelectionnee.description">
+                    <div class="cadre-details">
+                        <img src="assets/img/info.png" class="icon-small">
+                        <p class="description">{{ annonceSelectionnee.description }}</p>
+                    </div>
+                </ng-container>
+                <div class="cadre-details">
+                    <img src="assets/img/loc.png" class="icon-small">
+                    <p class="description">Perdu le {{ annonceSelectionnee.date }} à {{annonceSelectionnee.ville}}</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
 </section>

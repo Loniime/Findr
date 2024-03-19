@@ -19,7 +19,8 @@ export class AnnoncesComponent {
       .then(response => {
         // Une fois que la réponse est reçue, stockez les annonces dans la variable annonces
         this.annonces = response.data.filter((annonce: any) => annonce.gc_obo_nom_recordtype_sc_c === "Perdu")
-        .filter((annonce: any)=>annonce.ville!== null);
+        .filter((annonce: any)=>annonce.ville!== null)
+        .filter((annonce:any)=>annonce.description!==null);
       })
       .catch(error => {
         console.error('Erreur lors de la récupération des annonces:', error);
