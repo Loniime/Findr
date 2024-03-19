@@ -4,20 +4,39 @@
                 <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
                 <hr class="divider" />
                 <div class="row text-center">
-                    
-                    <div class="col-lg-3 mb-4" *ngFor="let name of getUniqueNames()">
-                        <button class="btn btn-lg btn-long2">{{ name }}</button>
-                    </div>
-                    
-                </div>
-                  
-        </div>
-</div>
-</section>
-<!--
-<div class="row text-center" *ngIf="bureaux$ | async as bureaux">
-    <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
-      <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
+        
+                        <div class="col-lg-3 mb-4" *ngFor="let name of getVille()">
+                            <button class="btn btn-lg btn-long2" onclick="window.location.href='#SecBureau'" >{{ name }}</button>
+                        </div>
+                      
+            </div>
     </div>
-  </div>
-  -->
+    </div>
+    </section>
+    
+    
+    <section class="page-section text-center" id="SecBureau">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mt-0 header-text">Bureaux disponible dans cette ville</h2>
+                    <hr class="divider divider-light"/>
+                    <div class="row ">
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="border p-3">
+                                <h5></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <div class="row text-center" *ngIf="bureaux$ | async as bureaux">
+        <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
+          <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
+        </div>
+      </div>
+      -->

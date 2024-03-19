@@ -7,7 +7,6 @@ import { BureauxComponent } from './components/bureaux/bureaux.component';
 import { AnnoncesComponent } from './components/annonces/annonces.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { MasterheadComponent } from './components/masterhead/masterhead.component';
-
 import { CommonModule } from '@angular/common';
 import { RechercheComponent } from './components/recherche/recherche.component';
 @Component({
