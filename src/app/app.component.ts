@@ -9,7 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MasterheadComponent } from './components/masterhead/masterhead.component';
 
 import { CommonModule } from '@angular/common';
-
+import { RechercheComponent } from './components/recherche/recherche.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,7 +22,8 @@ import { CommonModule } from '@angular/common';
     AnnoncesComponent,
     ContactComponent,
     MasterheadComponent,
-    CommonModule
+    CommonModule,
+    RechercheComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
