@@ -1,0 +1,38 @@
+<section class="page-section" id="Recherche">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center text-white mt-0 header-text">Effectuer une recherche dans notre base de données</h2>
+        <hr class="divider" />
+        <div class="row">
+            <div class="col-lg-3 mb-4 text-center">
+                <input type="date" class="mt-2 select-background form-select" (change)="onDateChange($event)">
+            </div>
+            <div class="col-lg-3 mb-4">
+                <select class="form-select mt-2 select-background" aria-label="Quoi?" (change)="onCategorieChange($event)">
+                    <option *ngFor="let name of getUniqueTypes()" [value]="name">{{ name }}</option>
+                </select>
+            </div>
+            <div class="col-lg-3 mb-4">
+                <select class="form-select mt-2 select-background" (change)="onEtatChange($event)">
+                    <option *ngFor="let name of getUniqueEtat()" [value]="name">{{ name }}</option>
+                </select>
+            </div>
+            <div class="col-lg-3 mb-4">
+                <select class="form-select mt-2 select-background" (change)="onLieuChange($event)">
+                    <option *ngFor="let name of getUniqueNames()">{{ name }}</option>
+                </select>
+            </div>
+        </div>
+        <!-- Nouvelle rangée pour le bouton de recherche -->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <button type="button" class="btn btn-xl" (click)="comparerDonnees()">Rechercher</button>
+            </div>
+        </div>
+        <div *ngIf="message" class="row">
+            <div class="col-lg-12 text-center">
+                <p>{{ message }}</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
