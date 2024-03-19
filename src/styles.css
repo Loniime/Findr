@@ -10896,11 +10896,15 @@ body {
 }
 
 .cadre1 {
-  width: 300px;
+  width: 500px;
   flex-shrink: 0; 
   margin-right: 10px; 
   scroll-snap-align: start;
 }
+.text-annonce{
+  color:#0c4128;
+}
+
 .lien-details {
   display: flex;
   align-items: center;
@@ -10908,7 +10912,29 @@ body {
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
-  color: #000;
+  color:#623e2a;
+  
+}
+.etat-cadre {
+  border: 1px solid #edae35;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  width:100px;
+  background-color: #edae35;
+}
+.cadre-details {
+  margin-top: 50px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.description{
+  color:#000;
+  height: 15Px;
 }
 .lien-details:hover {
   color: #FF5733; 
@@ -11031,6 +11057,17 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
+.annonce-cadre {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 500px; /* taille fixe */
+  height: 300px; /* taille fixe */
+  overflow: auto; /* activer le défilement si le contenu dépasse la taille */
+}
+
+
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
 }
