@@ -1,42 +1,49 @@
 <section class="page-section" id="Bureaux">
     <div class="container px-4 px-lg-5">
-            <div class="col-lg-12">
-                <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouves de votre ville</h2>
-                <hr class="divider" />
-                <div class="row text-center">
-        
-                        <div class="col-lg-3 mb-4" *ngFor="let name of getVille()">
-                            <button class="btn btn-lg btn-long2" onclick="window.location.href='#SecBureau'" >{{ name }}</button>
-                        </div>
-                      
+        <div class="col-lg-12">
+            <h2 class="text-center text-white header-text">Accéder aux informations de contact du bureau des objets trouvés de votre ville</h2>
+            <hr class="divider" />
+            <div class="row text-center">
+
+                <div class="col-lg-3 mb-4" *ngFor="let name of getUniqueNames() | slice:0:8">
+                    <button class="btn btn-lg btn-long2" (click)="onSearchCityFromButton(name)" onclick="window.location.href='#SecBureau'"(click)="showSecBureauOnClick()" >{{ name }}</button>
+                </div>
+                
+                <!-- Barre de recherche de villes -->
+                <div class="col-lg-8 mt-4 mx-auto text-center">
+                    <div class="input-group">
+                        
+                        <input class="form-control" type="text" (input)="onSearchCity($event)" placeholder="Rechercher une ville...">
+                        <button type="button" class="btn btn-xl" onclick="window.location.href='#SecBureau'" (click)="showSecBureauOnClick()" >Rechercher</button>
+                        
+                    </div>
+                </div>
+                
             </div>
+        </div>
     </div>
-    </div>
-    </section>
-    
-    
-    <section class="page-section text-center" id="SecBureau">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="text-white mt-0 header-text">Bureaux disponible dans cette ville</h2>
-                    <hr class="divider divider-light"/>
-                    <div class="row ">
-                        <div class="col-lg-4 mb-4 text-center">
-                            <div class="border p-3">
-                                <h5></h5>
-                                <p></p>
-                            </div>
+</section>
+
+
+<section class="page-section text-center" id="SecBureau" *ngIf="showSecBureau">
+    <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center"> 
+            <div class="col-lg-8 mx-auto"> 
+                <h2 class="text-white mt-0 header-text">Bureau disponible dans cette ville</h2>
+                <hr class="divider divider-light"/>
+                <div class="row">
+                    <div class="col-lg-12 mb-4 text-center"> 
+                        <div class="border p-3">
+                            <h5 class="header-text">Nom du bureau : {{ bureauName }}</h5>
+                            <p>Adresse : {{ adresse }}</p>
+                            <p *ngFor="let day of joursSemaine; let i = index"> <!-- Boucle sur les jours de la semaine -->
+                                {{ day }} : {{ horaire[i] }} <!-- Afficher le jour et son horaire correspondant -->
+                            </p>
+                            <p>Numero Téléphone : {{ numero }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--
-    <div class="row text-center" *ngIf="bureaux$ | async as bureaux">
-        <div class="col-lg-3 mb-4" *ngFor="let bureau of bureaux.results">
-          <button class="btn btn-lg btn-long2">{{ bureau.gc_obo_gare_origine_r_name }}</button>
-        </div>
-      </div>
-      -->
+    </div>
+</section>
