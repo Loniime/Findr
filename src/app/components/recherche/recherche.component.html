@@ -8,16 +8,19 @@
             </div>
             <div class="col-lg-3 mb-4">
                 <select class="form-select mt-2 select-background" aria-label="Quoi?" (change)="onCategorieChange($event)">
+                    <option selected disabled>Selectionner la catégorie de votre objet</option> 
                     <option *ngFor="let name of getUniqueTypes()" [value]="name">{{ name }}</option>
                 </select>
             </div>
             <div class="col-lg-3 mb-4">
                 <select class="form-select mt-2 select-background" (change)="onEtatChange($event)">
+                    <option selected disabled>Selectionner l'état de votre objet</option> 
                     <option *ngFor="let name of getUniqueEtat()" [value]="name">{{ name }}</option>
                 </select>
             </div>
             <div class="col-lg-3 mb-4">
                 <select class="form-select mt-2 select-background" (change)="onLieuChange($event)">
+                    <option selected disabled>Selectionner la ville</option> 
                     <option *ngFor="let name of getUniqueNames()">{{ name }}</option>
                 </select>
             </div>
@@ -25,14 +28,32 @@
         <!-- Nouvelle rangée pour le bouton de recherche -->
         <div class="row">
             <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-xl" (click)="comparerDonnees()">Rechercher</button>
-            </div>
-        </div>
-        <div *ngIf="message" class="row">
-            <div class="col-lg-12 text-center">
-                <p>{{ message }}</p>
+                <button type="button" class="btn btn-xl"   onclick="window.location.href='#AnnonceTrouvee'" (click)="rechercherAnnonces()">Rechercher</button>
             </div>
         </div>
         
+        
+        
+    </div>
+</section>
+<section class="page-section" id="AnnonceTrouvee" *ngIf="afficherAnnonceTrouvee">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center text-white mt-0 header-text">Annonces similaires</h2>
+        <hr class="divider" />
+        <div class="row justify-content-center"> <!-- Centrer le contenu -->
+            <div class="col-lg-12">
+                <div class="row"> <!-- Nouvelle rangée pour les annonces -->
+                    <div *ngFor="let annonce of annonceSelectionnee" class="col-lg-6 mb-4">
+                        <h1 class="header-text">{{annonce.gc_obo_nature_c}}</h1>
+                        <p>Type: {{annonce.gc_obo_type_c}}</p>
+                        <p>Description: {{annonce.description}}</p>
+                        <p>Date: {{annonce.date}}</p>
+                        <p>Ville: {{annonce.ville}}</p>
+                        <p>Etat: {{annonce.gc_obo_nom_recordtype_sc_c}}</p>
+                        <!-- Ajoutez d'autres propriétés d'annonce ici -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

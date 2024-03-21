@@ -1,7 +1,8 @@
 import * as data from '../../../assets/data.json';
 import { CommonModule } from '@angular/common';
-import axios from 'axios';
+import * as local from '../../../assets/landing.json'
 import { Component } from '@angular/core';
+import axios from 'axios';
 
 interface DataItem {
   date: string;
@@ -22,6 +23,7 @@ interface DataItem {
 export class RechercheComponent {
   
   jsonData: DataItem[] = (data as any).results;
+  jsonLocal=local.results;
   annoncesTrouvees: DataItem[] = [];
 
   etatSelectionne: string = '';
@@ -37,10 +39,28 @@ export class RechercheComponent {
   descriptionVisible: boolean = false;
   dateVisible: boolean = false;
   natureVisible: boolean = false;
+  afficherAnnonceTrouvee: boolean = false;
 
   message: string = '';
+  annonces: any[] = [];
+  annonceSelectionnee: any;
 
-  constructor() { }
+  constructor() {
+    // Effectuer une requête HTTP GET pour récupérer les annonces depuis votre serveur
+    axios.get('http://localhost:3000/results')
+      .then(response => {
+        // Une fois que la réponse est reçue, stockez les annonces dans la variable annonces
+        this.annonces = response.data.filter((annonce: any) => annonce.gc_obo_nom_recordtype_sc_c === "Perdu")
+        .filter((annonce: any)=>annonce.ville!== null)
+        .filter((annonce:any)=>annonce.description!==null);
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des annonces:', error);
+      });
+  }
+  afficherDetails(annonce: any) {
+    this.annonceSelectionnee = annonce;
+  }
 
   async comparerDonnees() {
     this.annoncesTrouvees = [];
@@ -52,19 +72,32 @@ export class RechercheComponent {
       if (obj.gc_obo_type_c === this.categorieSelectionnee &&
           obj.ville === this.lieuSelectionne &&
           obj.date === this.dateSelectionnee &&
-          obj.gc_obo_nom_recordtype_sc_c===this.etatSelectionne) {
+          obj.gc_obo_nom_recordtype_sc_c === this.etatSelectionne 
+          ) {
         // Une correspondance est trouvée
         correspondanceTrouvee = true;
+        // Ajouter l'annonce correspondante à la liste d'annonces trouvées
+        this.annoncesTrouvees.push(obj);
       }
     });
-  
-    // Si une correspondance est trouvée, définissez le message approprié
+
+    // Si une correspondance est trouvée, assignez la première annonce trouvée à annonceSelectionnee
     if (correspondanceTrouvee) {
+        this.annonceSelectionnee = this.annoncesTrouvees;
         this.message = "Des annonces similaires ont été trouvées.";
     } else {
         this.message = "Aucune annonce similaire n'a été trouvée.";
     }
 }
+
+rechercherAnnonces() {
+  this.comparerDonnees();
+  this.afficherDetails(this.annonceSelectionnee);
+  this.afficherAnnonceTrouvee = true;
+}
+
+
+
 
   onComplete() {
     this.etatVisible = true;
@@ -79,7 +112,7 @@ export class RechercheComponent {
     const uniqueNames = new Set<string>();
 
     this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_type_c !== null && item.gc_obo_type_c !== undefined) {
+      if (item.gc_obo_type_c !== null && item.gc_obo_type_c !== undefined && item.gc_obo_type_c !== '') {
         uniqueNames.add(item.gc_obo_type_c);
       }
     });
@@ -90,9 +123,9 @@ export class RechercheComponent {
   getUniqueNames(): string[] {
     const uniqueNames = new Set<string>();
 
-    this.jsonData.forEach((item: DataItem) => {
-      if (item.ville !== null && item.ville !== undefined) {
-        uniqueNames.add(item.ville);
+    this.jsonLocal.forEach(item => {
+      if (item.title !== null && item.title !== undefined) {
+        uniqueNames.add(item.title);
       }
     });
 
@@ -102,7 +135,7 @@ export class RechercheComponent {
     const uniqueNames = new Set<string>();
 
     this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined) {
+      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined && item.gc_obo_nature_c !=='') {
         uniqueNames.add(item.gc_obo_nature_c);
       }
     });
@@ -113,7 +146,7 @@ export class RechercheComponent {
     const uniqueNames = new Set<string>();
 
     this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_nom_recordtype_sc_c !== null && item.gc_obo_nom_recordtype_sc_c !== undefined) {
+      if (item.gc_obo_nom_recordtype_sc_c !== null && item.gc_obo_nom_recordtype_sc_c !== undefined && item.gc_obo_nom_recordtype_sc_c !=='') {
         uniqueNames.add(item.gc_obo_nom_recordtype_sc_c);
       }
     });
