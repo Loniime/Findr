@@ -43,17 +43,11 @@ export class FormulaireComponent {
   dateVisible: boolean = false;
   natureVisible: boolean=false;
   emailValide: boolean = true;
+  correspondanceTrouvee: boolean = false;
 
   constructor() { }
 
   async comparerDonnees() {
-    if (!this.isValidEmail(this.adresse)) {
-      console.error("Adresse e-mail invalide");
-      this.emailValide = false;
-      return; // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
-    } else {
-      this.emailValide = true;
-    }
     this.annoncesTrouvees = [];
     let correspondanceTrouvee = false; // Variable pour suivre si une correspondance a été trouvée
   
@@ -89,20 +83,26 @@ export class FormulaireComponent {
         // Utilisez Axios pour envoyer les données à votre serveur
         const response = await axios.post('http://localhost:3000/results', nouvelleAnnonce);
         console.log(response.data); // Vous pouvez afficher la réponse du serveur si nécessaire
+        // Mettez ici le code que vous souhaitez exécuter après l'ajout des données à la base de données
       } catch (error) {
         console.error('Erreur lors de l\'envoi des données:', error);
       }
-    
+    }else{
+      console.log("L'objet et dans la base déja");
     }
-    
-  
-  }
+}
+
   async comparer(): Promise<void> {
     this.verifierAdresseEmail();
-    if (!this.emailValide) {
-      // Arrêtez l'exécution de la méthode si l'adresse e-mail est invalide
-      return;
+    if (!this.isValidEmail(this.adresse)) {
+      console.error("Adresse e-mail invalide");
+      this.emailValide = false;
+      return; // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
+    } else {
+      this.emailValide = true;
+
     }
+    
   }
   
 
@@ -114,6 +114,19 @@ export class FormulaireComponent {
     this.descriptionVisible = true;
     this.dateVisible = true;
     this.natureVisible = true;
+    if (this.etatSelectionne === "Trouver") {
+      // Afficher un message à l'utilisateur
+      console.log("N'hésitez pas à regarder notre section d'objets trouvés pour trouver où déposer cet objet par rapport à votre ville.");
+      // Vous pouvez également afficher un message à l'utilisateur en utilisant une boîte de dialogue, une alerte ou un autre moyen.
+  } else {
+      // Si l'état n'est pas "Trouver", alors vérifier l'adresse e-mail
+      this.verifierAdresseEmail();
+      if (!this.emailValide) {
+          // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
+          return;
+      }
+  }
+  
   }
   isValidEmail(email: string): boolean {
     // Implémentez la logique de validation de l'adresse e-mail selon vos besoins
@@ -202,31 +215,19 @@ export class FormulaireComponent {
     const selectedDate = event.target.value;
     let dateToDisplay: string;
 
-    switch (selectedDate) {
-      case 'today':
-        dateToDisplay = this.getDateString(new Date());
-        break;
-      case 'Hier':
-        const hier = new Date();
-        hier.setDate(hier.getDate() - 1);
-        dateToDisplay = this.getDateString(hier);
-        break;
-      default:
-        const parsedDate = new Date(selectedDate);
-        dateToDisplay = this.getDateString(parsedDate);
-        break;
-    }
+    // Gérer les cas de date autres que 'aujourd'hui' et 'hier'
+    const parsedDate = new Date(selectedDate);
+    dateToDisplay = this.getDateString(parsedDate);
 
-    this.dateSelectionnee = dateToDisplay;
-    console.log("Date sélectionnée:", this.dateSelectionnee);
+    // Utiliser dateToDisplay comme bon vous semble
+
+    this.dateSelectionnee = dateToDisplay; // Assigner la date sélectionnée à this.dateSelectionnee
+    console.log("Date sélectionnée:", this.dateSelectionnee); // Afficher la date sélectionnée dans la console
   }
-
   getDateString(date: Date): string {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
     return `${year}-${month}-${day}`;
   }
-
-  
 }

@@ -28,23 +28,17 @@
                 <hr class="divider divider-light" />
                 <h2>{{annonceSelectionnee.gc_obo_nature_c}}</h2>
                 
-                <div class="d-flex justify-content-center">
-                    <div class="etat-cadre text-white">{{annonceSelectionnee.gc_obo_nom_recordtype_sc_c}}</div>
-                </div>
-                <ng-container *ngIf="annonceSelectionnee.description">
-                    <div class="cadre-details">
-                        <img src="assets/img/info.png" class="icon-small">
+                <div class="d-flex justify-content-between"> <!-- Utilisation de la classe d-flex et justify-content-between pour aligner les éléments sur la ligne -->
+                    <div class="cadre-details"> <!-- Ajout de la classe col-md-6 pour spécifier la largeur sur les écrans moyens -->
+                        <h3 class="header-text text-white" >Informations supplémentaire:</h3>
                         <p class="description">{{ annonceSelectionnee.description }}</p>
                     </div>
-                </ng-container>
-                <div class="cadre-details">
-                    <img src="assets/img/loc.png" class="icon-small">
-                    <p class="description">Perdu le {{ annonceSelectionnee.date }} à {{annonceSelectionnee.ville}}</p>
+                    
+                    <div class="cadre-details"> <!-- Ajout de la classe col-md-6 pour spécifier la largeur sur les écrans moyens -->
+                        <img src="assets/img/loc.png" class="icon-small">
+                        <p class="description">Perdu le {{ annonceSelectionnee.date }} à {{annonceSelectionnee.ville}}</p>
+                    </div>
                 </div>
-                <div class="cadre-details">
-                    <p class="description">Vous pensé avoir retrouver cette objet?</p>
-                </div>
-                
                 
             </div>
         </div>
