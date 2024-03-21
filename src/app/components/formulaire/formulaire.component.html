@@ -5,6 +5,7 @@
             <div class="mt-5">
                 <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
                 <h3 class="text-white header-text">Etat de l’objet :</h3>
+                <a class="text-white">Selectionner l'état de votre objet</a>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <button class="btn1 btn-lg btn-long " (click)="onEtatChange('Perdu')" >Perdu</button>
@@ -18,26 +19,21 @@
                 <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
                 <h3 class="text-white header-text" >Quoi?</h3>
                 <select class="form-select mt-2 select-background" aria-label="Quoi?" (change)="onCategorieChange($event)">
-                    <option selected *ngFor="let name of getUniqueTypes()" [value]="name">{{ name }}</option>
+                    <option selected disabled>Selectionner la catégorie de votre objet</option> 
+                    <option *ngFor="let name of getUniqueTypes()" [value]="name">{{ name }}</option>
                 </select>
-                
-            </div>
+                </div>
+
 
             <div class="mb-3"><i class="bi-gem fs-1 text-primary"></i></div>
                 <h3 class="text-white header-text" >Nature?</h3>
                 <select class="form-select mt-2 select-background" (change)="onNatureChange($event)">
-                    <option selected *ngFor="let name of getUniqueNature()" [value]="name">{{ name }}</option>
+                    <option selected disabled>Selectionner la nature de votre objet</option>
+                    <option *ngFor="let name of getUniqueNature()" [value]="name">{{ name }}</option>
                 </select>
                 
             
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
-            <form>
-                <div class="mb-3">
-                    <h4 for="photoInput" class="text-white header-text">Importer une photo </h4>
-                    <input type="file" class="form-control select-background" id="photoInput" accept="image/*">
-                    <p>(Les photos sont publiques et visibles des autres utilisateurs, ne publiez pas des photos de vos papiers d'identité ou d'informations trop personnelles.)</p>
-                </div>
-            </form>  
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div> 
             <form>
                 <div class="mb-3">
@@ -46,18 +42,28 @@
             </form>   
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Où?</h3>
+            
+            
             <div class="mb-3">
                 <select class="form-select mt-2 select-background" id="ville" (change)="onLieuChange($event)">
+                    <option selected disabled>Ville</option>
                     <option *ngFor="let name of getUniqueNames()">{{ name }}</option>
                   
                 </select>
                 
               </div>
-              <div class="mb-3">
-                <h3 class="header-text text-white">Adresse :</h3>
-                <input type="text" class="form-control select-background" placeholder="Adresse (facultatif)">
-                <!-- Utilisez ngModel pour lier la valeur de l'input à une propriété dans votre composant TypeScript -->
+              <div class="mb-3" *ngIf="etatSelectionne === 'Perdu'">
+                <h3 class="header-text text-white">Adresse mail:</h3>
+                <a class="text-white">Si vous avez perdu, saisissez votre adresse e-mail pour recevoir si votre objet a été retrouvé</a>
+                <div class="input-group">
+                    <input type="text" class="form-control select-background" placeholder="Entrez votre adresse e-mail..."  (input)="onAdresse($event)">
+                    <button type="button" class="btn btn-xl" (click)="comparer()">Vérifier</button>
+                </div>
+                <div *ngIf="!emailValide" class="alert alert-danger" role="alert">
+                    L'adresse e-mail saisie est invalide.
+                </div>
             </div>
+            
             
             <div class="mb-5"><i class="bi-gem fs-1 text-primary"></i></div>
             <h3 class="text-white header-text">Quand?</h3>
@@ -95,10 +101,4 @@
     </div>
 </section>
 
-<!--
-<div *ngFor="let annonce of annoncesTrouvees" class="cadre1">
-    <div *ngFor="let prop of annonce | keyvalue">
-        <h3 *ngIf="prop.value">{{ prop.key }}: {{ prop.value }}</h3>
-    </div>
-</div>
--->
+

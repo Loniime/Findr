@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import * as data from '../../../assets/data.json';
 import { CommonModule } from '@angular/common';
-import { AnnoncesComponent } from '../annonces/annonces.component';
+import * as local from '../../../assets/landing.json';
 import axios from 'axios';
 interface DataItem {
   date: string;
@@ -10,6 +10,7 @@ interface DataItem {
   gc_obo_type_c: string;
   gc_obo_nom_recordtype_sc_c: string;
   description: string;
+  adresseMail:string;
 }
 
 @Component({
@@ -22,6 +23,7 @@ interface DataItem {
 export class FormulaireComponent {
   
   jsonData: DataItem[] = (data as any).results;
+  jsonLocal= local.results;
   annoncesTrouvees: DataItem[] = [];
 
   etatSelectionne: string = '';
@@ -30,6 +32,9 @@ export class FormulaireComponent {
   descriptionSelectionnee: string = '';
   dateSelectionnee: string = '';
   natureSelectionnee:string = '';
+  email:string='';
+  searchCity:string='';
+  adresse: string='';
 
   etatVisible: boolean = false;
   categorieVisible: boolean = false;
@@ -37,10 +42,18 @@ export class FormulaireComponent {
   descriptionVisible: boolean = false;
   dateVisible: boolean = false;
   natureVisible: boolean=false;
+  emailValide: boolean = true;
 
   constructor() { }
 
   async comparerDonnees() {
+    if (!this.isValidEmail(this.adresse)) {
+      console.error("Adresse e-mail invalide");
+      this.emailValide = false;
+      return; // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
+    } else {
+      this.emailValide = true;
+    }
     this.annoncesTrouvees = [];
     let correspondanceTrouvee = false; // Variable pour suivre si une correspondance a été trouvée
   
@@ -49,7 +62,10 @@ export class FormulaireComponent {
       // Comparer chaque variable avec la variable sélectionnée dans le formulaire
       if (obj.gc_obo_type_c === this.categorieSelectionnee &&
           obj.ville === this.lieuSelectionne &&
-          obj.date === this.dateSelectionnee) {
+          obj.date === this.dateSelectionnee &&
+          obj.description === this.descriptionSelectionnee && 
+          obj.gc_obo_nature_c === this.natureSelectionnee &&
+          obj.adresseMail === this.adresse) {
         // Une correspondance est trouvée
         correspondanceTrouvee = true;
       }
@@ -64,7 +80,8 @@ export class FormulaireComponent {
         ville: this.lieuSelectionne,
         gc_obo_nature_c: this.natureSelectionnee,
         gc_obo_type_c: this.categorieSelectionnee,
-        gc_obo_nom_recordtype_sc_c: this.etatSelectionne
+        gc_obo_nom_recordtype_sc_c: this.etatSelectionne,
+        adresseMail:this.adresse
       };
       // Poussez le nouvel objet dans annoncesTrouvees
       this.annoncesTrouvees.push(nouvelleAnnonce);
@@ -80,6 +97,14 @@ export class FormulaireComponent {
     
   
   }
+  async comparer(): Promise<void> {
+    this.verifierAdresseEmail();
+    if (!this.emailValide) {
+      // Arrêtez l'exécution de la méthode si l'adresse e-mail est invalide
+      return;
+    }
+  }
+  
 
 
   onComplete() {
@@ -90,12 +115,25 @@ export class FormulaireComponent {
     this.dateVisible = true;
     this.natureVisible = true;
   }
-
+  isValidEmail(email: string): boolean {
+    // Implémentez la logique de validation de l'adresse e-mail selon vos besoins
+    // Vous pouvez utiliser des expressions régulières ou d'autres méthodes de validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  verifierAdresseEmail(): void {
+    if (!this.isValidEmail(this.adresse)) {
+      console.error("Adresse e-mail invalide");
+      this.emailValide = false;
+      return; // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
+    } else {
+      this.emailValide = true;
+    }
+  }
   getUniqueTypes(): string[] {
     const uniqueNames = new Set<string>();
 
     this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_type_c !== null && item.gc_obo_type_c !== undefined) {
+      if (item.gc_obo_type_c !== null && item.gc_obo_type_c !== undefined && item.gc_obo_type_c !== '') {
         uniqueNames.add(item.gc_obo_type_c);
       }
     });
@@ -106,9 +144,9 @@ export class FormulaireComponent {
   getUniqueNames(): string[] {
     const uniqueNames = new Set<string>();
 
-    this.jsonData.forEach((item: DataItem) => {
-      if (item.ville !== null && item.ville !== undefined) {
-        uniqueNames.add(item.ville);
+    this.jsonLocal.forEach(item => {
+      if (item.title !== null && item.title !== undefined) {
+        uniqueNames.add(item.title);
       }
     });
 
@@ -118,13 +156,14 @@ export class FormulaireComponent {
     const uniqueNames = new Set<string>();
 
     this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined) {
+      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined && item.gc_obo_nature_c !== '') {
         uniqueNames.add(item.gc_obo_nature_c);
       }
     });
 
     return Array.from(uniqueNames);
   }
+  
 
   onEtatChange(value: string) {
     this.etatSelectionne = value;
@@ -152,6 +191,11 @@ export class FormulaireComponent {
     const target = event.target as HTMLSelectElement;
     this.descriptionSelectionnee = target.value;
     console.log("Description sélectionné:", this.descriptionSelectionnee);
+  }
+  onAdresse(event:Event){
+    const target = event.target as HTMLInputElement;
+    this.adresse = target.value;
+    console.log("Adresse saisi",this.adresse);
   }
 
   onDateChange(event: any) {
