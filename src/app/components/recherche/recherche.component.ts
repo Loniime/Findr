@@ -98,16 +98,6 @@ rechercherAnnonces() {
 
 
 
-
-  onComplete() {
-    this.etatVisible = true;
-    this.categorieVisible = true;
-    this.lieuVisible = true;
-    this.descriptionVisible = true;
-    this.dateVisible = true;
-    this.natureVisible = true;
-  }
-
   getUniqueTypes(): string[] {
     const uniqueNames = new Set<string>();
 
@@ -126,17 +116,6 @@ rechercherAnnonces() {
     this.jsonLocal.forEach(item => {
       if (item.title !== null && item.title !== undefined) {
         uniqueNames.add(item.title);
-      }
-    });
-
-    return Array.from(uniqueNames);
-  }
-  getUniqueNature(): string[] {
-    const uniqueNames = new Set<string>();
-
-    this.jsonData.forEach((item: DataItem) => {
-      if (item.gc_obo_nature_c !== null && item.gc_obo_nature_c !== undefined && item.gc_obo_nature_c !=='') {
-        uniqueNames.add(item.gc_obo_nature_c);
       }
     });
 
@@ -165,11 +144,6 @@ rechercherAnnonces() {
     this.categorieSelectionnee = target.value;
     console.log("Catégorie sélectionnée:", this.categorieSelectionnee);
   }
-  onNatureChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    this.natureSelectionnee = target.value;
-    console.log("Catégorie sélectionnée:", this.natureSelectionnee);
-  }
 
   onLieuChange(event: Event) {
     const target = event.target as HTMLSelectElement;
@@ -177,35 +151,16 @@ rechercherAnnonces() {
     console.log("Lieu sélectionné:", this.lieuSelectionne);
   }
 
-  onDesChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    this.descriptionSelectionnee = target.value;
-    console.log("Description sélectionné:", this.descriptionSelectionnee);
-  }
   
   onDateChange(event: any) {
     const selectedDate = event.target.value;
     let dateToDisplay: string;
+    const parsedDate = new Date(selectedDate);
+    dateToDisplay = this.getDateString(parsedDate);
 
-    switch (selectedDate) {
-      case 'today':
-        dateToDisplay = this.getDateString(new Date());
-        break;
-      case 'Hier':
-        const hier = new Date();
-        hier.setDate(hier.getDate() - 1);
-        dateToDisplay = this.getDateString(hier);
-        break;
-      default:
-        const parsedDate = new Date(selectedDate);
-        dateToDisplay = this.getDateString(parsedDate);
-        break;
-    }
-
-    this.dateSelectionnee = dateToDisplay;
-    console.log("Date sélectionnée:", this.dateSelectionnee);
+    this.dateSelectionnee = dateToDisplay; 
+    console.log("Date sélectionnée:", this.dateSelectionnee); 
   }
-
   getDateString(date: Date): string {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');

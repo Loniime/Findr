@@ -25,7 +25,7 @@
                 </select>
             </div>
         </div>
-        <!-- Nouvelle rangée pour le bouton de recherche -->
+        
         <div class="row">
             <div class="col-lg-12 text-center">
                 <button type="button" class="btn btn-xl"   onclick="window.location.href='#AnnonceTrouvee'" (click)="rechercherAnnonces()">Rechercher</button>
@@ -40,9 +40,9 @@
     <div class="container px-4 px-lg-5">
         <h2 class="text-center text-white mt-0 header-text">Annonces similaires</h2>
         <hr class="divider" />
-        <div class="row justify-content-center"> <!-- Centrer le contenu -->
+        <div class="row justify-content-center"> 
             <div class="col-lg-12">
-                <div class="row"> <!-- Nouvelle rangée pour les annonces -->
+                <div class="row"> 
                     <div *ngFor="let annonce of annonceSelectionnee" class="col-lg-6 mb-4">
                         <h1 class="header-text">{{annonce.gc_obo_nature_c}}</h1>
                         <p>Type: {{annonce.gc_obo_type_c}}</p>
@@ -50,7 +50,6 @@
                         <p>Date: {{annonce.date}}</p>
                         <p>Ville: {{annonce.ville}}</p>
                         <p>Etat: {{annonce.gc_obo_nom_recordtype_sc_c}}</p>
-                        <!-- Ajoutez d'autres propriétés d'annonce ici -->
                     </div>
                 </div>
             </div>
