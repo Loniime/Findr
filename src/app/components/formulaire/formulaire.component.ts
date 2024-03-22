@@ -80,10 +80,9 @@ export class FormulaireComponent {
       // Poussez le nouvel objet dans annoncesTrouvees
       this.annoncesTrouvees.push(nouvelleAnnonce);
       try {
-        // Utilisez Axios pour envoyer les données à votre serveur
+        // Utilisez Axios pour envoyer les données au serveur
         const response = await axios.post('http://localhost:3000/results', nouvelleAnnonce);
-        console.log(response.data); // Vous pouvez afficher la réponse du serveur si nécessaire
-        // Mettez ici le code que vous souhaitez exécuter après l'ajout des données à la base de données
+        console.log(response.data); //afficher la réponse du serveur 
       } catch (error) {
         console.error('Erreur lors de l\'envoi des données:', error);
       }
@@ -115,9 +114,7 @@ export class FormulaireComponent {
     this.dateVisible = true;
     this.natureVisible = true;
     if (this.etatSelectionne === "Trouver") {
-      // Afficher un message à l'utilisateur
       console.log("N'hésitez pas à regarder notre section d'objets trouvés pour trouver où déposer cet objet par rapport à votre ville.");
-      // Vous pouvez également afficher un message à l'utilisateur en utilisant une boîte de dialogue, une alerte ou un autre moyen.
   } else {
       // Si l'état n'est pas "Trouver", alors vérifier l'adresse e-mail
       this.verifierAdresseEmail();
@@ -129,15 +126,14 @@ export class FormulaireComponent {
   
   }
   isValidEmail(email: string): boolean {
-    // Implémentez la logique de validation de l'adresse e-mail selon vos besoins
-    // Vous pouvez utiliser des expressions régulières ou d'autres méthodes de validation
+    // vérification de la logique de validation de l'adresse e-mail 
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
   verifierAdresseEmail(): void {
     if (!this.isValidEmail(this.adresse)) {
       console.error("Adresse e-mail invalide");
       this.emailValide = false;
-      return; // Arrêter l'exécution de la méthode si l'adresse e-mail est invalide
+      return; 
     } else {
       this.emailValide = true;
     }
@@ -214,15 +210,11 @@ export class FormulaireComponent {
   onDateChange(event: any) {
     const selectedDate = event.target.value;
     let dateToDisplay: string;
-
-    // Gérer les cas de date autres que 'aujourd'hui' et 'hier'
     const parsedDate = new Date(selectedDate);
     dateToDisplay = this.getDateString(parsedDate);
 
-    // Utiliser dateToDisplay comme bon vous semble
-
-    this.dateSelectionnee = dateToDisplay; // Assigner la date sélectionnée à this.dateSelectionnee
-    console.log("Date sélectionnée:", this.dateSelectionnee); // Afficher la date sélectionnée dans la console
+    this.dateSelectionnee = dateToDisplay; 
+    console.log("Date sélectionnée:", this.dateSelectionnee); 
   }
   getDateString(date: Date): string {
     const year = date.getFullYear();
