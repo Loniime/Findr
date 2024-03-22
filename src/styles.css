@@ -1,20 +1,10 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'Ctachy Mager';
-  src: url('assets/img/CatchyMager-Normal.ttf') format('truetype'); /* Assurez-vous de spécifier le chemin vers votre fichier de police */
-  /* Ajoutez d'autres formats de fichier de police si nécessaire */
+  src: url('assets/img/CatchyMager-Normal.ttf') format('truetype'); 
+ 
 }
-/*!
-* Start Bootstrap - Creative v7.0.7 (https://startbootstrap.com/theme/creative)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -126,7 +116,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 .header-text {
-  font-family: "Ctachy Mager", sans-serif; /* Utilisez le nom de la police exact tel qu'il est défini dans votre fichier de police */
+  font-family: "Ctachy Mager", sans-serif; 
 }
 
 h1, .h1 {
@@ -299,12 +289,11 @@ figure {
   margin: 0 0 1rem;
 }
 #logo {
-  width: 200px; /* Réglez la largeur selon vos besoins */
-  height: auto; /* Ajustez la hauteur pour maintenir les proportions */
-  position: fixed; /* Position fixée par rapport à la fenêtre de visualisation */
-  /*top: 0.2px; /* Décalage de 20 pixels du haut de la fenêtre */
-  left: 20px; /* Décalage de 20 pixels de la gauche de la fenêtre */
-  z-index: 999; /* Assurez-vous que le logo est au-dessus de tout autre contenu */
+  width: 200px; 
+  height: auto;
+  position: fixed; 
+  left: 20px; 
+  z-index: 999; 
 }
 img,
 svg {
@@ -2808,7 +2797,7 @@ textarea.form-control-lg {
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
 
-  /*transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
+  
 }
 .btn1 {
   background-color: #3a483c; 
@@ -2822,7 +2811,7 @@ textarea.form-control-lg {
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
 
-  /*transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
+ 
 }
 .btn2 {
   background-color: #d89349; 
@@ -2836,7 +2825,7 @@ textarea.form-control-lg {
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
 
-  /*transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
+ 
 }
 .btn3{
   background-color: #637666; 
@@ -3174,6 +3163,7 @@ textarea.form-control-lg {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .btn-long2 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
@@ -3198,6 +3188,20 @@ textarea.form-control-lg {
 .fade:not(.show) {
   opacity: 0;
 }
+.annonce-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.annonce {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+}
+
 
 .collapse:not(.show) {
   display: none;
