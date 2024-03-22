@@ -53,14 +53,10 @@ export class BureauxComponent {
   showSecBureauOnClick() {
     this.showSecBureau = true;
   }
-  showSecBureauOnSearch() {
-    
-    this.showSecBureau = true;
-  }
 
   onSearchCity(event: Event) {
     const target = event.target as HTMLInputElement;
-    this.searchCity = target.value.trim(); // Supprimer les espaces au début et à la fin de la chaîne de recherche
+    this.searchCity = target.value.trim(); 
 
     // Vérifier si la ville saisie correspond à un item.title dans jsonLocal
     const foundCity = this.jsonLocal.find(item => item.title === this.searchCity);
@@ -75,16 +71,13 @@ export class BureauxComponent {
       console.log("Hoaire:",this.horaire);
       console.log("Numero",this.numero);
       console.log("Adresse:",this.adresse);
-      // Ajoutez ici le reste de la logique si nécessaire
     } else {
       console.log("La ville n'existe pas :", this.searchCity);
-      // Afficher un message à l'utilisateur indiquant que la ville n'existe pas
     }
   }
   onSearchCityFromButton(name: string) {
-    // Créer un événement simulé avec le nom de la ville comme valeur cible
     const event = { target: { value: name } } as unknown as Event;
-    // Appeler la méthode onSearchCity avec l'événement simulé
+    
     this.onSearchCity(event);
   }
 
