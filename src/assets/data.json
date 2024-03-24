@@ -100,6 +100,15 @@
       "id": "aee1"
     },
     {
+      "date": "2024-02-20",
+      "ville": "Paris",
+      "gc_obo_nature_c": "Peluche",
+      "description": "un petit lapin en peluche blanc",
+      "gc_obo_type_c": "Articles d'enfants, de puériculture",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé",
+      "id": "cd32"
+    },
+    {
       "date": "2024-01-04",
       "ville": "Le Mans",
       "gc_obo_nature_c": "Valise, sac sur roulettes",
@@ -125,6 +134,15 @@
       "gc_obo_type_c": "Appareils électroniques, informatiques, appareils photo",
       "gc_obo_nom_recordtype_sc_c": "Perdu",
       "id": "a206"
+    },
+    {
+      "date": "2024-01-09",
+      "ville": "Nantes",
+      "gc_obo_nature_c": "Peluche",
+      "description": "un panda en peluche noir rt blanc",
+      "gc_obo_type_c": "Articles d'enfants, de puériculture",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé",
+      "id": "cd32"
     },
     {
       "date": "2024-01-05",
