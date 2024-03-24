@@ -11,5 +11,7 @@ export type BureauResult = {
   };
   
 export function getAllBureaux(): Observable<BureauResult> {
-    return inject(HttpClient).get<BureauResult>('https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/objets-trouves-restitution/records?limit=100');
+    return inject(HttpClient).get<BureauResult>(
+        'https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/objets-trouves-restitution/records?limit=100'
+        );
 }

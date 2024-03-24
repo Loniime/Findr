@@ -2,10 +2,7 @@
     <div class="container px-4 px-lg-5">
         <h2 class="text-center text-white mt-0 header-text">Effectuer une recherche dans notre base de données</h2>
         <hr class="divider" />
-        <div class="row">
-            <div class="col-lg-3 mb-4 text-center">
-                <input type="date" class="mt-2 select-background form-select" (change)="onDateChange($event)">
-            </div>
+        <div class="row justify-content-center">
             <div class="col-lg-3 mb-4">
                 <select class="form-select mt-2 select-background" aria-label="Quoi?" (change)="onCategorieChange($event)">
                     <option selected disabled>Selectionner la catégorie de votre objet</option> 
@@ -25,6 +22,7 @@
                 </select>
             </div>
         </div>
+        
         
         <div class="row">
             <div class="col-lg-12 text-center">

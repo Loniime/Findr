@@ -65,13 +65,11 @@ export class RechercheComponent {
   async comparerDonnees() {
     this.annoncesTrouvees = [];
     let correspondanceTrouvee = false; // Variable pour suivre si une correspondance a été trouvée
-  
     // Parcourir les données JSON
     this.jsonData.forEach((obj: DataItem) => {
       // Comparer chaque variable avec la variable sélectionnée dans le formulaire
       if (obj.gc_obo_type_c === this.categorieSelectionnee &&
           obj.ville === this.lieuSelectionne &&
-          obj.date === this.dateSelectionnee &&
           obj.gc_obo_nom_recordtype_sc_c === this.etatSelectionne 
           ) {
         // Une correspondance est trouvée
@@ -152,19 +150,5 @@ rechercherAnnonces() {
   }
 
   
-  onDateChange(event: any) {
-    const selectedDate = event.target.value;
-    let dateToDisplay: string;
-    const parsedDate = new Date(selectedDate);
-    dateToDisplay = this.getDateString(parsedDate);
-
-    this.dateSelectionnee = dateToDisplay; 
-    console.log("Date sélectionnée:", this.dateSelectionnee); 
-  }
-  getDateString(date: Date): string {
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    return `${year}-${month}-${day}`
-  }
+  
 }
