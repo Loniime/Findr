@@ -1,49 +1,13 @@
 {"results":[
     {
       "onHome": true,
-      "fulldpts": [
-        "75001",
-        "75002",
-        "75003",
-        "75004",
-        "75005",
-        "75006",
-        "75007",
-        "75008",
-        "75009",
-        "75010",
-        "75011",
-        "75012",
-        "75013",
-        "75014",
-        "75015",
-        "75016",
-        "75017",
-        "75018",
-        "75019",
-        "75020",
-        "75116"
+      "fulldpts": ["75001","75002","75003","75004","75005","75006","75007","75008","75009","75010","75011","75012","75013","75014","75015","75016","75017","75018","75019","75020","75116"
       ],
-      "officeHours": [
-        "8:30 - 16:30",
-        "8:30 - 16:30",
-        "8:30 - 16:30",
-        "8:30 - 16:30",
-        "8:30 - 16:30",
-        "Fermé",
-        "Fermé"
+      "officeHours": ["8:30 - 16:30","8:30 - 16:30","8:30 - 16:30","8:30 - 16:30","8:30 - 16:30","Fermé","Fermé"
       ],
       "itemCategories": [],
       "media": [
-        {
-          "fieldname": "media",
-          "originalname": "pug.jpg",
-          "encoding": "7bit",
-          "mimetype": "image/jpeg",
-          "destination": "uploads/landing/EQgRjtN21",
-          "filename": "image-landingEQgRjtN21.jpg",
-          "path": "uploads/landing/EQgRjtN21/image-landingEQgRjtN21.jpg",
-          "size": 231615
+        {"fieldname": "media","originalname": "pug.jpg","encoding": "7bit","mimetype": "image/jpeg","destination": "uploads/landing/EQgRjtN21","filename": "image-landingEQgRjtN21.jpg","path": "uploads/landing/EQgRjtN21/image-landingEQgRjtN21.jpg","size": 231615
         }
       ],
       "_id": "5f69afd349806f2c149da8b9",
@@ -611,18 +575,9 @@
     },
     {
       "onHome": false,
-      "fulldpts": [
-        "72000",
-        "72100"
+      "fulldpts": ["72000","72100"
       ],
-      "officeHours": [
-        "08:30 - 17:30",
-        "08:30 - 17:30",
-        "08:30 - 17:30",
-        "08:30 - 17:30",
-        "08:30 - 17:30",
-        "Fermé",
-        "Fermé"
+      "officeHours": ["08:30 - 17:30","08:30 - 17:30","08:30 - 17:30","08:30 - 17:30","08:30 - 17:30","Fermé","Fermé"
       ],
       "itemCategories": [],
       "media": [],
