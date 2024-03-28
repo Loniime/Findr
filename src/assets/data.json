@@ -13,9 +13,27 @@
       "date": "2024-03-15",
       "ville": "Le Mans",
       "gc_obo_nature_c": "Peluche",
-      "description": "un ourson en peluche de couleur brun clair",
+      "description": "un ourson en peluche de couleur brun clair trouvé sur un banc dans le parc victor hugo",
       "gc_obo_type_c": "Articles d'enfants, de puériculture",
-      "gc_obo_nom_recordtype_sc_c": "Perdu",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé",
+      "id": "cd32"
+    },
+    {
+      "date": "2024-02-06",
+      "ville": "Le Mans",
+      "gc_obo_nature_c": "Peluche",
+      "description": "un lapin en peluche de couleur blanc trouvé par terre",
+      "gc_obo_type_c": "Articles d'enfants, de puériculture",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé",
+      "id": "cd32"
+    },
+    {
+      "date": "2024-01-01",
+      "ville": "Le Mans",
+      "gc_obo_nature_c": "Peluche",
+      "description": "un koala en peluche de couleur vert",
+      "gc_obo_type_c": "Articles d'enfants, de puériculture",
+      "gc_obo_nom_recordtype_sc_c": "Trouvé",
       "id": "cd32"
     },
     {
@@ -2085,6 +2103,16 @@
       "gc_obo_type_c": "",
       "gc_obo_nom_recordtype_sc_c": "",
       "adresseMail": ""
+    },
+    {
+      "id": "fb31",
+      "date": "2024-03-15",
+      "description": "un ourson brun clair",
+      "ville": "Le Mans",
+      "gc_obo_nature_c": "Peluche",
+      "gc_obo_type_c": "Articles d'enfants, de puériculture",
+      "gc_obo_nom_recordtype_sc_c": "Perdu",
+      "adresseMail": "amandine@gmail.com"
     }
   ]
 }

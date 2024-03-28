@@ -3196,11 +3196,24 @@ textarea.form-control-lg {
 .annonce {
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
   width: 250px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 15px; 
 }
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+
+
+
 
 
 .collapse:not(.show) {

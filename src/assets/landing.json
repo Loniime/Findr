@@ -2939,76 +2939,7 @@
       "officeName": "le commissariat de police",
       "type": "city"
     },
-    {
-      "onHome": false,
-      "fulldpts": [],
-      "officeHours": [],
-      "itemCategories": [
-        {
-          "parent": "effets personnels",
-          "_id": "5ef4bdfb5a3f0005f0ba78a8",
-          "name": "Carte bleue",
-          "slug": "carte-bleue",
-          "__v": 0,
-          "label": " - Carte bleue"
-        },
-        {
-          "parent": "effets personnels",
-          "_id": "5ef4bde95a3f0005f0ba78a5",
-          "name": "Portefeuille",
-          "slug": "portefeuille",
-          "__v": 0,
-          "label": " - Portefeuille"
-        }
-      ],
-      "media": [],
-      "_id": "5f96846e496ec11520ed423f",
-      "title": "Carte bleue perdue ? Quelles démarches ? Faire opposition",
-      "fullTitle": "",
-      "slug": "carte-bancaire",
-      "type": "objet",
-      "departement": "",
-      "phoneNumber": "",
-      "officeName": "",
-      "officeAddress": "",
-      "itemText": "<h2>Nos conseils pour retrouver votre carte Bancaire</h2> <p>Chaque jour, des centaines de Cartes Bleues sont perdues. La procédure en cas   de perte est donc bien ficelée. </p> <p>   Quand on perd sa CB, la première chose à faire est de ne pas paniquer et   adopter les bons réflexes. Vous êtes au bon endroit si vous cherchez comment   faire opposition. </p> <h3>Le bon réflexe : se protéger des fraudes</h3> <p>   Pour se protéger des fraudes, la première chose à faire est de faire   opposition en appelant sa banque. </p> <p>   Faire opposition est une procédure qui permet de bloquer sa carte bleue, elle   n’est donc plus utilisable par qui que ce soit. </p> <p>   Pour faire opposition, certaines banques donne la possibilité à leur   utilisateur de bloquer leur carte directement depuis leur application. Dans ce   cas là c’est plutôt simple, il suffit d’appuyer sur un bouton et le tour est   joué. </p> <p>   Lorsque ce n’est pas possible depuis l’application, il faut alors appeler sa   banque rapidement pour éviter que quelqu’un utilise votre carte bancaire à des   fins malhonnêtes. </p> <h3>Les numéros à appeler pour faire opposition</h3> <p>   Pour que cela soit plus simple pour vous, nous avons listé tous les numéros de   chaque banque afin que vous les contactiez le plus rapidement possible. </p> <table class=\"tableau_opposition\">   <thead>     <tr class=\"row-1 titre\">       <th class=\"column-1\">Nom de la banque</th>       <th class=\"column-2\">Depuis la France</th>       <th class=\"column-3\">Depuis l’étranger</th>     </tr>   </thead>   <tbody>     <tr class=\"row-2 even\">       <td class=\"column-1\">Allianz Banque</td>       <td class=\"column-2\">09 69 39 69 86</td>       <td class=\"column-3\">00 33 9 69 39 69 86</td>     </tr>     <tr class=\"row-3 odd\">       <td class=\"column-1\">BAMI : Banque Michel Inchaupsé</td>       <td class=\"column-2\">03 88 39 85 78</td>       <td class=\"column-3\">00 33 3 88 39 85 78</td>     </tr>     <tr class=\"row-4 even\">       <td class=\"column-1\">Oney (ex Banque Accord)</td>       <td class=\"column-2\">         0 825 28 29 30<br />         <em           >(du lundi au vendredi de 8h à 20h et le samedi de 8h30 à 20h) (0.15€           ttc/minute)</em         ><br />         0 969 39 54 54<br />         <em>(en dehors des horaires d’ouverture) (0.35€ ttc/minute)</em>       </td>       <td class=\"column-3\">         00 33 969 39 54 32<br />         <em>(0.35€ ttc/minute)</em>       </td>     </tr>     <tr class=\"row-5 odd\">       <td class=\"column-1\">Banque Casino</td>       <td class=\"column-2\">0 800 90 13 87</td>       <td class=\"column-3\"></td>     </tr>     <tr class=\"row-6 even\">       <td class=\"column-1\">Banque Palatine</td>       <td class=\"column-2\">01 49 37 80 34</td>       <td class=\"column-3\">00 33 1 49 37 80 34</td>     </tr>     <tr class=\"row-7 odd\">       <td class=\"column-1\">Banque Populaire</td>       <td class=\"column-2\">01 77 86 24 24</td>       <td class=\"column-3\">33 1 77 86 24 24</td>     </tr>     <tr class=\"row-8 even\">       <td class=\"column-1\">Banque Postale</td>       <td class=\"column-2\">09 69 39 99 98</td>       <td class=\"column-3\">00 33 9 69 39 99 98</td>     </tr>     <tr class=\"row-9 odd\">       <td class=\"column-1\">Milleis Banque (ex Barclays)</td>       <td class=\"column-2\">03 88 39 85 78</td>       <td class=\"column-3\">00 33 3 88 39 85 78</td>     </tr>     <tr class=\"row-10 even\">       <td class=\"column-1\">BNP Paribas</td>       <td class=\"column-2\">34 77</td>       <td class=\"column-3\">00 33 1 40 14 44 00</td>     </tr>     <tr class=\"row-11 odd\">       <td class=\"column-1\">Boursorama Banque</td>       <td class=\"column-2\">         <em>Cartes Visa Classic :</em><br />         09 77 40 10 08<br />         <em>Cartes Visa Premier :</em><br />         04 42 60 53 44<br />         <em>Cartes Visa Ultim :</em><br />         08 00 10 51 53       </td>       <td class=\"column-3\">         <em>Cartes Visa Classic :</em><br />         00 33 9 77 40 10 08<br />         <em>Cartes Visa Premier :</em><br />         00 33 4 42 60 53 44<br />         <em>Cartes Visa Ultim :</em><br />         00 33 8 00 10 51 53       </td>     </tr>     <tr class=\"row-12 even\">       <td class=\"column-1\">BPE : Banque Privée Européenne</td>       <td class=\"column-2\">02 98 28 42 28</td>       <td class=\"column-3\">00 33 2 98 28 42 28</td>     </tr>     <tr class=\"row-13 odd\">       <td class=\"column-1\">Caisse d’Épargne</td>       <td class=\"column-2\">09 69 36 39 39</td>       <td class=\"column-3\">00 33 9 69 36 39 39</td>     </tr>     <tr class=\"row-14 even\">       <td class=\"column-1\">Carrefour Banque</td>       <td class=\"column-2\">         0 826 827 827<br />         <em>(0.15€ ttc/minute)</em>       </td>       <td class=\"column-3\"></td>     </tr>     <tr class=\"row-16 odd\">       <td class=\"column-1\">CIC</td>       <td class=\"column-2\">03 88 39 85 78</td>       <td class=\"column-3\">00 33 3 88 39 85 78</td>     </tr>     <tr class=\"row-17 even\">       <td class=\"column-1\">Cofinoga</td>       <td class=\"column-2\">         0 825 000 222<br />         <em>(0.15€ ttc/minute)</em>       </td>       <td class=\"column-3\"></td>     </tr>     <tr class=\"row-18 odd\">       <td class=\"column-1\">Crédit Agricole</td>       <td class=\"column-2\">09 69 39 92 91</td>       <td class=\"column-3\">00 33 9 69 39 92 91</td>     </tr>     <tr class=\"row-19 even\">       <td class=\"column-1\">Crédit Coopératif</td>       <td class=\"column-2\">09 69 39 10 66</td>       <td class=\"column-3\">00 33 9 69 39 10 66</td>     </tr>     <tr class=\"row-20 odd\">       <td class=\"column-1\">Crédit du Nord</td>       <td class=\"column-2\">09 69 32 20 09 ou 34 50</td>       <td class=\"column-3\">00 33 9 69 32 20 09</td>     </tr>     <tr class=\"row-21 even\">       <td class=\"column-1\">Crédit Mutuel</td>       <td class=\"column-2\">03 88 40 10 00</td>       <td class=\"column-3\">00 33 3 88 40 10 00</td>     </tr>     <tr class=\"row-22 odd\">       <td class=\"column-1\">Fortuneo Banque</td>       <td class=\"column-2\">02 98 28 42 28</td>       <td class=\"column-3\">00 33 2 98 28 42 28</td>     </tr>     <tr class=\"row-23 even\">       <td class=\"column-1\">Groupama Banque</td>       <td class=\"column-2\">         <em>Cartes Visa Classic :</em><br />         01 49 37 80 34<br />         <em>Cartes Visa Premier :</em><br />         01 42 77 45 45       </td>       <td class=\"column-3\">         <em>Cartes Visa Classic :</em><br />         00 33 1 49 37 80 34<br />         <em>Cartes Visa Premier :</em><br />         00 33 1 42 77 45 45       </td>     </tr>     <tr class=\"row-24 odd\">       <td class=\"column-1\">HSBC</td>       <td class=\"column-2\">         0 800 970 179 <em>(particulier)</em><br />         0 800 970 188 <em>(professionnel)</em>       </td>       <td class=\"column-3\">         00 33 800 970 179 <em>(particulier)</em><br />         00 33 800 970 188 <em>(professionnel)</em>       </td>     </tr>     <tr class=\"row-25 even\">       <td class=\"column-1\">ING Direct</td>       <td class=\"column-2\">01 57 22 54 09</td>       <td class=\"column-3\">00 33 1 57 22 54 09</td>     </tr>     <tr class=\"row-26 odd\">       <td class=\"column-1\">LCL</td>       <td class=\"column-2\">09 69 32 03 10</td>       <td class=\"column-3\">00 33 9 69 32 03 10</td>     </tr>     <tr class=\"row-27 even\">       <td class=\"column-1\">Monabanq</td>       <td class=\"column-2\">03 88 39 85 78</td>       <td class=\"column-3\">00 33 3 88 39 85 78</td>     </tr>     <tr class=\"row-29 odd\">       <td class=\"column-1\">Société Générale</td>       <td class=\"column-2\">09 69 39 77 77</td>       <td class=\"column-3\">00 33 1 76 77 39 33</td>     </tr>     <tr class=\"row-30 even\">       <td class=\"column-1\">Sofinco</td>       <td class=\"column-2\">         <em>Carte Visa :</em><br />         0 973 323 332<br />         <em>Carte Mastercard :</em><br />         0 973 323 331<br />         <em>Client La Redoute, Fnac, Printemps :</em><br />         0 973 323 323       </td>       <td class=\"column-3\"></td>     </tr>   </tbody> </table>  <p>   Il existe aussi un numéro général, au cas où vous n’arriviez pas à contacter   votre banque. C’est le numéro du Service interbancaire d’opposition : 0 892   705 705 (0.34 € TTC/min). Il vous permet de faire opposition 24:00/24. </p> <h3>Déclarer sa carte bleue perdue</h3> <p>   Il faut ensuite déclarer sa perte ou le vol aux autorités compétentes   c’est-à-dire la police ou la gendarmerie ou encore au consulat si l’on   séjourne à l’étranger. </p> <h3>Augmenter ses chances de la retrouver</h3> <p>   Nous sommes une plateforme collaborative permettant aux particuliers de   signaler les objets qu’ils perdent / trouvent afin de les restituer à leurs   propriétaires respectifs. </p> <p>   N’hésitez pas à déclarer votre objet perdu dans notre base de données sans   attendre ! </p> <a class=\"btn btn-primary m-3\" href=\"/objets/declarer\"   >Effectuer ma déclaration</a > <h3>Et après ?</h3> <p>   Après une opposition, votre carte devient inutilisable, et l’opération est   irréversible. Il faut donc en commander une autre auprès de votre banque. </p> <p>   Si des transactions sont réalisées après la date d’opposition, vous n’êtes plus responsable. Les pertes seront prises en charge par votre banque (sauf dans le cas d’une fraude). </p>",
-      "metakeywords": "",
-      "metadescription": "➡️ Vous avez perdu votre carte bancaire ? Retrouver sur cette page tous nos conseils pour la retrouver ainsi que les démarches à éffectuer pour éviter le pire !",
-      "metatitle": "💳 Carte bleue perdue ? Quelles démarches ? Faire opposition",
-      "__v": 0,
-      "itemName": "carte bleue"
-    },
-    {
-      "onHome": false,
-      "fulldpts": [],
-      "officeHours": [],
-      "itemCategories": [
-        {
-          "parent": "effets personnels",
-          "_id": "5ef4be0b5a3f0005f0ba78ab",
-          "name": "Carte de Transport",
-          "slug": "carte-de-transport",
-          "__v": 0,
-          "label": " - Carte de Transport"
-        }
-      ],
-      "media": [],
-      "_id": "5fbbc28b5b48e20fc4bdf3be",
-      "title": "Carte navigo RATP perdue? Quelles démarches ? - Retrouver votre pass",
-      "fullTitle": "",
-      "slug": "carte-navigo-perdue",
-      "type": "objet",
-      "departement": "",
-      "phoneNumber": "",
-      "officeName": "",
-      "officeAddress": "",
-      "itemText": "<h3>Contacter la RATP pour les informer</h3><p>L’entreprise va par la suite vérifier auprès de leur service des objets trouvés si votre carte de transport n’a pas été retrouvé.</p><p>Attention : nous vous invitons à signaler rapidement la perte de votre titre de transport afin d’obtenir une nouvelle carte au plus vite.</p><p>Les usagers ayant perdu leur carte d’abonnement peuvent le signaler à un membre du personnel RATP en agence, par téléphone ou par courrier.</p><h3>Obtenir une nouvelle carte</h3><p>Vous souhaitez vous déplacer tout de même avec la RATP ? Vous pouvez alors vous rendre sur les bornes automatisées en station. Elles permettent l’édition de bon de remplacement. Une fois le bon généré, il faut se rendre dans un point de contact Navigo dont vous avez la liste ici. Une nouvelle carte vous sera alors remise.</p><h3>Combien ça coute ?</h3><p>Si cela est votre première perte, le coût sera de 23 €.</p><p>À partir de la deuxième perte, le prix est fixé à 40 €.</p><p>Si vous souhaitez tenter d’économiser du temps ou / et de l’argent, vous pouvez toujours effectuer une déclaration de perte sur notre site.</p><h3>Votre carte a été retrouvée ? Comment récupérer celle-ci ?</h3><p>Si votre carte a été retrouvée au service des objets trouvés de la ratp, vous devez vous munir de votre carte d’identité afin que votre passe vous soit remis. Avant de vous y rendre vérifiez bien les horaires d’ouverture de l’agence concernée. Vous pouvez vérifier ces informations sur le <a href=\"https://www.ratp.fr/\">site officiel de la RATP</a></p><h3>Une chance en plus ça vous dit ?</h3><p>Nous sommes une plateforme collaborative permettant aux particuliers de signaler les objets qu’ils perdent / trouvent afin de les restituer à leurs propriétaires respectifs.</p><p>N’hésitez pas à déclarer votre objet perdu dans notre base de données sans attendre !</p><p><a href=\"/objets/declarer\">Effectuer ma déclaration</a></p>",
-      "metakeywords": "",
-      "metadescription": "➡️ Vous avez perdu votre pass navigo ? Retrouver sur cette page tous nos conseils pour le retrouver ainsi que les démarches à éffectuer pour en obtenir une nouvelle",
-      "metatitle": "Ⓜ️ Carte navigo RATP perdue? Quelles démarches ? - Retrouver votre pass",
-      "__v": 0,
-      "itemName": "Carte Navigo"
-    },
+    
     {
       "onHome": false,
       "fulldpts": [
